@@ -9,3 +9,5 @@ The com.dslfoundry.plaintextgen language is being utilized to model the implemen
 domain in Python and Ruby as plain-text documents.
 By changing the "Language engaged on generation" value for the sandbox model you can select
 the desired output language from plain text documents, Python or Ruby.
+
+The [plaintextgen language](https://plugins.jetbrains.com/plugin/8444-com-dslfoundry-plaintextgen) plugin is required.
