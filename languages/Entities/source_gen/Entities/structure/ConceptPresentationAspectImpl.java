@@ -4,13 +4,13 @@ package Entities.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_Entity = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Relationship = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_Entity;
+  private ConceptPresentation props_Relationship;
 
   @Override
   @Nullable
@@ -18,8 +18,18 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.Entity:
+        if (props_Entity == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_Entity = cpb.create();
+        }
         return props_Entity;
       case LanguageConceptSwitch.Relationship:
+        if (props_Relationship == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_Relationship = cpb.create();
+        }
         return props_Relationship;
     }
     return null;
