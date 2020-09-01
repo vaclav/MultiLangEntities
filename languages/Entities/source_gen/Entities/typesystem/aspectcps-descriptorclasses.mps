@@ -3,6 +3,7 @@
   <persistence version="9" />
   <attribute name="checkpoint" value="DescriptorClasses" />
   <attribute name="generation-plan" value="AspectCPS" />
+  <attribute name="user-objects" value="true" />
   <languages />
   <imports>
     <import index="cmft" ref="r:fb7bb14b-ed2b-4678-ad3e-670e700ebea4(Entities.typesystem)" />

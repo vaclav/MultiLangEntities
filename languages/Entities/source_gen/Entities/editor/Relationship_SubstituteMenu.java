@@ -10,7 +10,6 @@ import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
 import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuPart;
@@ -20,14 +19,17 @@ import java.util.Collection;
 import jetbrains.mps.smodel.ConceptDescendantsCache;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
+import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 
 public class Relationship_SubstituteMenu extends SubstituteMenuBase {
   @NotNull
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new Relationship_SubstituteMenu.SMP_ReferenceScope_3smz28_a(), MetaAdapterFactory.getConcept(0x81baee788ceb49aaL, 0x8e77ea7539ef3920L, 0x68cb59938883a0aL, "Entities.structure.Relationship")));
-    result.add(new Relationship_SubstituteMenu.SMP_Subconcepts_3smz28_b());
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SMP_ReferenceScope_3smz28_a(), CONCEPTS.Relationship$HN));
+    result.add(new SMP_Subconcepts_3smz28_b());
     return result;
   }
 
@@ -48,7 +50,7 @@ public class Relationship_SubstituteMenu extends SubstituteMenuBase {
 
     public SMP_ReferenceScope_3smz28_a() {
       // that cast is needed for prevent the users from https://youtrack.jetbrains.com/issue/MPS-29051 
-      super((SAbstractConcept) MetaAdapterFactory.getConcept(0x81baee788ceb49aaL, 0x8e77ea7539ef3920L, 0x68cb59938883a0aL, "Entities.structure.Relationship"), MetaAdapterFactory.getReferenceLink(0x81baee788ceb49aaL, 0x8e77ea7539ef3920L, 0x68cb59938883a0aL, 0x68cb59938883a0dL, "target"));
+      super((SAbstractConcept) CONCEPTS.Relationship$HN, LINKS.target$PcXK);
     }
     @NotNull
     @Override
@@ -65,7 +67,7 @@ public class Relationship_SubstituteMenu extends SubstituteMenuBase {
   }
   public class SMP_Subconcepts_3smz28_b extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
     protected Collection getConcepts(final SubstituteMenuContext _context) {
-      return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0x81baee788ceb49aaL, 0x8e77ea7539ef3920L, 0x68cb59938883a0aL, "Entities.structure.Relationship"));
+      return ConceptDescendantsCache.getInstance().getDirectDescendants(CONCEPTS.Relationship$HN);
     }
     @NotNull
     @Override
@@ -83,5 +85,13 @@ public class Relationship_SubstituteMenu extends SubstituteMenuBase {
     protected Collection<SubstituteMenuItem> createItemsForConcept(SubstituteMenuContext context, SAbstractConcept concept) {
       return context.createItems(new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(context.getEditorContext().getRepository()), concept));
     }
+  }
+
+  private static final class CONCEPTS {
+    /*package*/ static final SConcept Relationship$HN = MetaAdapterFactory.getConcept(0x81baee788ceb49aaL, 0x8e77ea7539ef3920L, 0x68cb59938883a0aL, "Entities.structure.Relationship");
+  }
+
+  private static final class LINKS {
+    /*package*/ static final SReferenceLink target$PcXK = MetaAdapterFactory.getReferenceLink(0x81baee788ceb49aaL, 0x8e77ea7539ef3920L, 0x68cb59938883a0aL, 0x68cb59938883a0dL, "target");
   }
 }

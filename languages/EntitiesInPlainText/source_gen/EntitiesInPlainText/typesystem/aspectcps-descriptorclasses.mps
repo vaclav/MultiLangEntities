@@ -3,6 +3,7 @@
   <persistence version="9" />
   <attribute name="checkpoint" value="DescriptorClasses" />
   <attribute name="generation-plan" value="AspectCPS" />
+  <attribute name="user-objects" value="true" />
   <languages />
   <imports>
     <import index="fm6p" ref="r:7107e060-a570-4df0-b327-9dc464f5f245(EntitiesInPlainText.typesystem)" />

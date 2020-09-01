@@ -42,9 +42,9 @@
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="qcHp$Sy3D9" role="1TKVEi">
       <property role="IQ2ns" value="471951730650135113" />
-      <property role="20lmBu" value="aggregation" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="relationships" />
-      <property role="20lbJX" value="0..n" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="qcHp$Sy3Ca" resolve="Relationship" />
     </node>
     <node concept="PrWs8" id="qcHp$Sy3Bj" role="PzmwI">
@@ -57,9 +57,8 @@
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="qcHp$Sy3Cd" role="1TKVEi">
       <property role="IQ2ns" value="471951730650135053" />
-      <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="target" />
-      <property role="20lbJX" value="1" />
+      <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="qcHp$Sy3Bi" resolve="Entity" />
     </node>
     <node concept="PrWs8" id="qcHp$Sy3Cb" role="PzmwI">

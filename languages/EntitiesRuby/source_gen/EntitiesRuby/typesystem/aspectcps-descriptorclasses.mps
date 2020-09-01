@@ -3,6 +3,7 @@
   <persistence version="9" />
   <attribute name="checkpoint" value="DescriptorClasses" />
   <attribute name="generation-plan" value="AspectCPS" />
+  <attribute name="user-objects" value="true" />
   <languages />
   <imports>
     <import index="rf5z" ref="r:90934300-282c-4623-a79d-e017a5bbeab3(EntitiesRuby.typesystem)" />

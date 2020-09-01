@@ -3,6 +3,7 @@
   <persistence version="9" />
   <attribute name="checkpoint" value="DescriptorClasses" />
   <attribute name="generation-plan" value="AspectCPS" />
+  <attribute name="user-objects" value="true" />
   <languages />
   <imports>
     <import index="e1s6" ref="r:382a24a6-46dd-4e2f-8bbb-477a42392675(EntitiesPython.typesystem)" />
